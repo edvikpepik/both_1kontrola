@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="timeline.css">
+    <title>History</title>
+</head>
+<body>
+    <header>
+        <img href="index.html" src="images/LOGOMBB.svg" class="logo">
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="index.html">Home</a>
+                <a href="models.html">Models</a>
+                <a href="timeline.html">History</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="login.html">Account</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="title">
+        <h1>History</h1>
+        <p>The Evolution of Mercedes-Benz</p>
+    </div>
+    <div class="timeline">
+        <div class="checkpoint">
+            <div>
+                <h2>1920s: Founding and Early Innovations</h2>
+                <p>Mercedes-Benz was officially founded in 1926 when two companies, Benz & Cie and Daimler-Motoren-Gesellschaft, merged. The name "Mercedes" came from one of Daimler's early cars, named after Mercedes Jellinek, the daughter of an important client. During this period, Mercedes-Benz pioneered innovations in automotive engineering, particularly with the introduction of the first supercharged cars.</p>
+            </div>
+        </div>
+        <div class="checkpoint">
+            <div>
+                <h2>1930s: Performance and Luxury</h2>
+                <p>In the 1930s, Mercedes-Benz cemented its reputation for luxury and performance with vehicles like the Mercedes-Benz 770. Known for its powerful engines, it became a status symbol for heads of state and dignitaries. Mercedes also began to dominate motorsports, further strengthening its brand.</p>             
+            </div>
+        </div>
+        <div class="checkpoint">
+            <div>
+                <h2>1940s: Wartime Production</h2>
+                <p>During World War II, Mercedes-Benz shifted production toward military vehicles. The company's factories were used to produce trucks, aircraft engines, and military vehicles. The war left Mercedes in a weakened state, with much of its infrastructure damaged.</p>              
+            </div>
+        </div>
+        <div class="checkpoint">
+            <div>
+                <h2>1950s: Rebirth and Innovation</h2>
+                <p>The 1950s marked a resurgence for Mercedes-Benz. The brand introduced the legendary 300 SL Gullwing in 1954, an iconic sports car with its distinctive upward-opening doors. This decade also saw the launch of the S-Class, which would go on to become synonymous with luxury and innovation.</p>
+            </div>
+        </div>
+        <div class="checkpoint">
+            <div>
+                <h2>1960s: Growth and Expansion</h2>
+                <p>In the 1960s, Mercedes expanded its lineup with more diverse vehicles, including luxury sedans, convertibles, and sports cars. The brand solidified its reputation for safety by introducing innovations like the crumple zone, which improved passenger protection in crashes.</p>
+            </div>
+        </div>
+        <div class="checkpoint">
+            <div>
+                <h2>1970s: Focus on Safety and Innovation</h2>
+                <p>During the 1970s, Mercedes-Benz became a leader in safety features, introducing anti-lock braking systems (ABS) in their cars. The oil crisis also pushed Mercedes to focus on fuel-efficient designs, leading to advancements in diesel engines.</p>
+            </div>
+        </div>
+        <div class="checkpoint">
+            <div>
+                <h2>1980s: Dominance and Prestige</h2>
+                <p>The 1980s saw Mercedes-Benz continue to dominate the luxury car market, especially with the E-Class and S-Class models. The brand also became synonymous with build quality and reliability. In motorsports, Mercedes made strides in Formula 1, working closely with McLaren.</p>
+            </div>
+        </div>
+        <div class="checkpoint">
+            <div>
+                <h2>1990s: Technological Advancements and Global Reach</h2>
+                <p>Mercedes-Benz continued to innovate throughout the 1990s with groundbreaking technologies like electronic stability control and advanced airbags. The company expanded its global footprint, entering new markets and introducing more models, including SUVs like the M-Class.</p>
+            </div>
+        </div>
+        <div class="checkpoint">
+            <div>
+                <h2>2000s: New Challenges and Sustainability</h2>
+                <p>Entering the 21st century, Mercedes-Benz faced challenges from increasing competition but responded by focusing on sustainability and new technologies, including hybrid and electric vehicles. The Mercedes-Benz SLR McLaren exemplified its dedication to blending luxury with high-performance engineering.</p>
+            </div>
+        </div>
+        <div class="checkpoint">
+            <div>  
+                <h2>2010s and Beyond: Electric Future and Cutting-Edge Design</h2>
+                <p>In the 2010s, Mercedes-Benz fully embraced electric mobility with the launch of the EQ series of electric vehicles. The brand also focused on autonomous driving technologies, setting the stage for a new era in automotive innovation.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const menuBtn =document.querySelector(".menu-btn");
+        const navigation =document.querySelector(".navigation");
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+
+    </script>
+</body>
+</html>

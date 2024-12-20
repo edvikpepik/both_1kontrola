@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="register.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <img href="index.html" src="images/LOGOMBB.svg" class="logo">
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="index.html">Home</a>
+                <a href="models.html">Models</a>
+                <a href="timeline.html">History</a>
+                <a href="test.html">Quiz</a>
+                <a href="login.html">Account</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <form action="connect.php" method="post">
+            <h1>Registration</h1>
+
+            <div class="input-box">
+                <div class="input-field">
+                    <input type="text" placeholder="Full Name" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-field">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <div class="input-field">
+                    <input type="email" placeholder="Email" required>
+                    <i class='bx bx-envelope' ></i>
+                </div>
+                <div class="input-field">
+                    <input type="nembuer" placeholder="Phone Number" required>
+                    <i class='bx bxs-phone' ></i>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <div class="input-field">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt' ></i>
+                </div>
+                <div class="input-field">
+                    <input type="password" placeholder="Confirm Password" required>
+                    <i class='bx bxs-lock-alt' ></i>
+                </div>
+            </div>
+            <label><input type="checkbox" required>I hereby declare that the above information provided is true and correct</label>
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
+    <script>
+        const menuBtn =document.querySelector(".menu-btn");
+        const navigation =document.querySelector(".navigation");
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+
+    </script>
+    
+</body>
+</html>

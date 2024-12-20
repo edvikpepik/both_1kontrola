@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot password</title>
+    <link rel="stylesheet" href="forgotpass.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <img href="index.html" src="images/LOGOMBB.svg" class="logo">
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="index.html">Home</a>
+                <a href="models.html">Models</a>
+                <a href="timeline.html">History</a>
+                <a href="test.html">Quiz</a>
+                <a href="login.html">Account</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <form action="">
+            <h1>Forgot Password</h1>
+            <div class="input-box">
+                <input type="email" placeholder="Enter Email"
+                required>
+                <i class='bx bx-envelope' ></i>
+            </div>
+            <div class="input-box">
+                <input type="email" placeholder="Confirm Email"
+                required>
+                <i class='bx bx-envelope' ></i>
+            </div>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me</label>
+
+            </div>
+            <button type="submit" class="btn"> Send Email</button>
+            <div class="register-link">
+                <p>Already have an account? <a href="login.html">Login</a> </p>
+            </div>
+        </form>
+    </div>
+    <script>
+        const menuBtn =document.querySelector(".menu-btn");
+        const navigation =document.querySelector(".navigation");
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+
+    </script>
+
+    
+</body>
+</html>
